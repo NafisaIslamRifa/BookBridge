@@ -1,0 +1,191 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+
+/* Variables */
+:root {
+   --orange: #8e44ad;
+   --red: #c0392b;
+   --black: #333;
+   --white: #fff;
+   --light-color: #666;
+   --light-white: #ccc;
+   --light-bg: #f5f5f5;
+   --border: .1rem solid var(--black);
+   --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+/* General Reset */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   outline: none;
+   border: none;
+   text-decoration: none;
+   transition: all .2s linear;
+}
+
+/* Text Selection */
+*::selection {
+   background-color: var(--orange);
+   color: var(--white);
+}
+
+/* Base Font Size */
+html {
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+/* Header */
+.headers {
+    height:70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 35px;
+    margin-left: 20px;
+    color: var(--orange);
+}
+
+.middle-section {
+    flex:1;
+    margin-left: 60px;
+    margin-right: 65px;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    flex: 1;
+    height: 50px;
+    border: 2px solid #ccc;
+    padding-left: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.search-bar::placeholder {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.search-button {
+    height: 40px;
+    width:50px;
+    background-color: white;
+    border-width: 2px;
+    margin-left: -60px;
+    border-radius: 5px;
+}
+.right-section {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-right: 20px;
+}
+
+.icons {
+   display: flex;
+   align-items: center;
+   margin-right: 20px;
+}
+
+.icons > * {
+   font-size: 2.5rem;
+   color: var(--black);
+   cursor: pointer;
+   margin-left: 1.5rem;
+}
+
+.icons > *:hover {
+   color: var(--orange);
+   
+}
+
+.user-boxs {
+   display: none;
+   position: absolute;
+   top: 100%;
+   right: 0;
+   background-color: var(--white);
+   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+   border: var(--border);
+   border-radius: .5rem;
+   padding: 1rem;
+   z-index: 1000; /* Ensure it's above other content */
+}
+
+.right-section .icons {
+   position: relative; /* Make sure user-box is positioned relative to this */
+}
+
+#user-btn {
+   cursor: pointer;
+}
+
+#user-btn:hover + .user-box {
+   display: block; /* Show user-box when user hovers over user icon */
+}
+
+.user-box p {
+   font-size: 2rem;
+   color: var(--light-color);
+   margin-bottom: 1.5rem;
+}
+
+.user-box p span {
+   color: var(--orange);
+}
+
+.user-box .delete-btn {
+   margin-top: 0;
+}
+/* Apply orange background color on hover */
+.dropdown:hover .btn-secondary {
+   background-color: var(--orange);
+   color: white; /* Change text color to white */
+}
+
+/* Apply orange background color on dropdown items hover */
+.dropdown-menu .dropdown-item:hover {
+   background-color: var(--orange);
+   color: white; /* Change text color to white */
+}
+
+.nav-link.dropdown-toggle{
+color: black;
+}
+.nav-link{
+   color:black;
+}
+.nav-link:hover {
+   background-color: orange;
+   color: white; /* Change text color to white on hover */
+ }
+ 
+ @media only screen and (max-width: 600px) {
+   .middle-section {
+      flex-direction: column;
+      align-items: stretch;
+   }
+   .search-bar {
+      margin-bottom: 10px;
+   }
+   .search-button {
+      margin-left: 0;
+      margin-top: 10px;
+   }
+}
